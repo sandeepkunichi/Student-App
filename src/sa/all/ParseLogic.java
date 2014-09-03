@@ -14,10 +14,10 @@ import org.xml.sax.SAXException;
 public class ParseLogic {
 
 	public List<String> getList(String usn) throws ParserConfigurationException, SAXException, IOException {
-		File stocks = new File("result.xml");
+		File sheet = new File("result.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(stocks);
+		Document doc = dBuilder.parse(sheet);
 		doc.getDocumentElement().normalize();
 		NodeList nodes = doc.getElementsByTagName("record");
 		List<String> sList = new ArrayList<String>();
